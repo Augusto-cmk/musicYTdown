@@ -3,12 +3,15 @@ from pytube import YouTube,Playlist
 import moviepy.editor as mp
 from arqDir import *
 from tqdm import tqdm
+import os
 
 class main:
     def __init__(self):
         self.modo = None
         self.nomeDir = "VideosTemp"
         self.nomeDirOut = "Musicas"
+        if self.nomeDirOut not in os.listdir():
+            os.makedirs(self.nomeDirOut)
 
     def op(self,modo):
         self.modo = modo
